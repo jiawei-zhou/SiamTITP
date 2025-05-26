@@ -1,0 +1,84 @@
+META_ARC: "siamDFT_alexnet"
+
+BACKBONE:
+    TYPE: "alexnet"
+    # PRETRAINED: '/home/zhoujiawei/tracking_model/SiamCAR-master/pretrained_models/alexnet-bn.pth'
+    TRAIN_EPOCH: 10
+    LAYERS_LR: 0.1
+    WIDTH_MULT: 1
+
+ADJUST:
+    ADJUST: true
+    TYPE: "AdjustAllLayer"
+    KWARGS:
+        in_channels: [256]
+        out_channels: [256]
+
+TMfuse:
+    dim: 256
+    dim_feedward: 2048
+    fusion_layer_num: 2
+    nhead: 8
+
+TRACK:
+    TYPE: 'SiamDFTTracker'
+    PENALTY_K: 0.04
+    WINDOW_INFLUENCE: 0.44
+    LR: 0.33
+    SCORE_SIZE: 17
+    EXEMPLAR_SIZE: 127
+    INSTANCE_SIZE: 255
+    CONTEXT_AMOUNT: 0.5
+    STRIDE: 8
+
+TRAIN:
+    EPOCH: 20
+    START_EPOCH: 16
+    BATCH_SIZE: 256 # 32
+    BASE_LR: 0.005
+    CLS_WEIGHT: 1.0
+    LOC_WEIGHT: 3.0
+    CEN_WEIGHT: 1.0
+    RESUME: '/home/zhoujiawei/tracking_model/SiamCAR-master/snapshot_alexnet/checkpoint_e16.pth'
+    NUM_CLASSES: 2
+    NUM_CONVS: 4
+    PRIOR_PROB: 0.01
+    OUTPUT_SIZE: 17 # 31
+
+    LR:
+        TYPE: 'log'
+        KWARGS:
+            start_lr: 0.005
+            end_lr: 0.0005
+    LR_WARMUP:
+        TYPE: 'step'
+        EPOCH: 5
+        KWARGS:
+            start_lr: 0.001
+            end_lr: 0.005
+            step: 1
+
+DATASET:
+    NAMES: 
+    - 'VID'
+    # - 'YOUTUBEBB'
+    # - 'COCO'
+    # - 'DET'
+    - 'GOT'
+
+    TEMPLATE:
+        SHIFT: 4
+        SCALE: 0.05
+        BLUR: 0.0
+        FLIP: 0.0
+        COLOR: 1.0
+
+    SEARCH:
+        SHIFT: 64
+        SCALE: 0.18
+        BLUR: 0.2
+        FLIP: 0.0
+        COLOR: 1.0
+        MASK: 0.125
+    NEG: 0.0
+    GRAY: 0.0
