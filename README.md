@@ -1,7 +1,7 @@
 # SiamTITP
 SiamTITP: Incorporating temporal information and Trajectory prediction Siamese Network for Satellite Video Object Tracking.
 The overall framework of SiamTITP:
-![image](figs/network frame.png)
+![image](figs/network.png)
 
 ## 1. Environment
 This code has been tested on Ubuntu 22.04, Python 3.8, Pytorch 1.10.0, CUDA 11.1. Please install related libraries before running this code:
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 ## 3. Test
 The test datasets is avalible in:[SatSOT](http://www.csu.cas.cn/gb/kybm/sjlyzx/gcxx_sjj/sjj_wxxl/202106/t20210607_6080256.html)，[SV248S](https://github.com/xdai-dlgvv/SV248S)，[OOTB](https://github.com/YZCU/OOTB) <br>
-Due to lack of offical json files, we create the specifical json files for datasets, please refer to . Meanwhile, we provied the model parameters. These can be download in [Google driver]() or [Baiduyun](), the code is:xxxx. If you want to test the tracker on a new dataset, please refer to pysot-toolkit to set test_dataset.
+Due to lack of offical json files, we create the specifical json files for datasets, please refering to [gen_json.py](toolkit/datasets) files. Meanwhile, we provied the model parameters. These can be download in [Google driver]() or [Baiduyun](), the code is:xxxx. If you want to test the tracker on a new dataset, please refer to pysot-toolkit to set test_dataset.
 > test model performance
 ```python 
 python test.py
