@@ -37,7 +37,7 @@ class OOTBVideo(Video):
         if isinstance(tracker_names, str):
             tracker_names = [tracker_names]
         for name in tracker_names:
-            traj_file = os.path.join(path, name,self.name,self.name+'.txt')
+            traj_file = os.path.join(path, name,self.name+'.txt')
             if os.path.exists(traj_file):
                 with open(traj_file, 'r') as f :
                     pred_traj = [list(map(float, x.strip().split(',')))
