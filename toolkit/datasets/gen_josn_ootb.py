@@ -12,7 +12,7 @@ def gen_json_file():
             continue
         video_name = video
         video_dir = video
-        gt_path = os.path.join(path,video,'new_groundtruth_hbb.txt')
+        gt_path = os.path.join(path,video,'new_groundtruth_hbb.txt')    # need to convert the rotation bounding box to horizontal bounding box
         # init_rect_list = []
         # gt_rect_list = []
         gt_bbox = np.loadtxt(gt_path,delimiter=',').astype(float)
