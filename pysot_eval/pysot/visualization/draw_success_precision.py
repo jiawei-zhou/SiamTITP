@@ -45,11 +45,11 @@ def draw_success_precision(success_ret, name, videos, attr, dataset_name,precisi
     plt.yticks(np.arange(ymin, ymax, 0.1))
     plt.tight_layout()
     ax.set_aspect((xmax - xmin)/(ymax-ymin))
-    # if attr == 'ALL':
-    #     plt.savefig(os.path.join(sv_path, name + '_succ.png'))
-    # else:
-    #     plt.savefig(os.path.join(sv_path, attr + '_succ.png'))
-    # plt.show()
+    if attr == 'ALL':
+        plt.savefig(os.path.join(sv_path, name + '_succ.png'))
+    else:
+        plt.savefig(os.path.join(sv_path, attr + '_succ.png'))
+    plt.show()
 
     if precision_ret:
         # norm precision plot
@@ -88,11 +88,11 @@ def draw_success_precision(success_ret, name, videos, attr, dataset_name,precisi
         plt.yticks(np.arange(ymin, ymax, 0.1))
         plt.tight_layout()
         ax.set_aspect((xmax - xmin)/(ymax-ymin))
-        # if attr == 'ALL':
-        #     plt.savefig(os.path.join(sv_path, name + '_pre.png'))
-        # else:
-        #     plt.savefig(os.path.join(sv_path, attr + '_pre.png'))
-        # plt.show()
+        if attr == 'ALL':
+            plt.savefig(os.path.join(sv_path, name + '_pre.png'))
+        else:
+            plt.savefig(os.path.join(sv_path, attr + '_pre.png'))
+        plt.show()
 
     if EIoU_success_ret:
         fig, ax = plt.subplots()
@@ -131,11 +131,11 @@ def draw_success_precision(success_ret, name, videos, attr, dataset_name,precisi
         plt.yticks(np.arange(ymin, ymax, 0.1))
         plt.tight_layout()
         ax.set_aspect((xmax - xmin)/(ymax-ymin))
-        # if attr == 'ALL':
-        #     plt.savefig(os.path.join(sv_path, name + '_EIoU_succ.png'))
-        # else:
-        #     plt.savefig(os.path.join(sv_path, attr + '_EIoU_succ.png'))
-        # plt.close()
+        if attr == 'ALL':
+            plt.savefig(os.path.join(sv_path, name + '_EIoU_succ.png'))
+        else:
+            plt.savefig(os.path.join(sv_path, attr + '_EIoU_succ.png'))
+        plt.close()
     # norm precision plot
     if norm_precision_ret:
         fig, ax = plt.subplots()
