@@ -18,9 +18,9 @@ from pysot.datasets import DatasetFactory
 parser = argparse.ArgumentParser(description='siamcar tracking')
 
 sv_dir = os.path.join(os.path.dirname(__file__),'..')
-dataset_dir = '/home/zhoujiawei/satellite_video_datasets/SatSOT' # SatSOT SV248S
-datset_name = 'SatSOT'
-result_dir = '/home/zhoujiawei/tracking_model/SiamCAR-master/results/SatSOT'
+dataset_dir = 'Your_dataset_path' # SatSOT SV248S
+datset_name = ''    # SV248S OOTB SatSOT
+result_dir = 'Your_result_path'    
 parser.add_argument('--video', default='', type=str,
         help='eval one special video')
 parser.add_argument('--dataset', type=str, default=datset_name,
@@ -34,7 +34,7 @@ parser.add_argument('--save_dir', default = sv_dir , type=str,
 
 args = parser.parse_args()
 video_names = []
-tracker_names = ['SiamTITP(Ours)','SiamCAR(baseline)']
+tracker_names = ['SiamTITP(Ours)']
 color = color_line(tracker_names) 
 for key, v in color.items():
     temp = (v[2]* 255,v[1]* 255,v[0]* 255)
@@ -48,8 +48,6 @@ def main():
             # test one special video
             if video.name not in video_names:
                 continue
-        if 'ARC' not in video.attr:
-            continue
         pred_bboxes = {}
         video_name = video.name
         for track in  tracker_names:
