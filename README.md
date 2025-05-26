@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ## 3. Test
 The test datasets is avalible in:[SatSOT](http://www.csu.cas.cn/gb/kybm/sjlyzx/gcxx_sjj/sjj_wxxl/202106/t20210607_6080256.html)，[SV248S](https://github.com/xdai-dlgvv/SV248S)，[OOTB](https://github.com/YZCU/OOTB) <br>
-Due to lack of offical json files, we create the specifical json files for datasets. Meanwhile, we provied the model parameters. These can be download in [Google driver]() or [Baiduyun](), the code is:xxxx. If you want to test the tracker on a new dataset, please refer to pysot-toolkit to set test_dataset.
+Due to lack of offical json files, we create the specifical json files for datasets, please refer to . Meanwhile, we provied the model parameters. These can be download in [Google driver]() or [Baiduyun](), the code is:xxxx. If you want to test the tracker on a new dataset, please refer to pysot-toolkit to set test_dataset.
 > test model performance
 ```python 
 python test.py
