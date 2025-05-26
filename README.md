@@ -1,5 +1,8 @@
 # SiamTITP
-SiamTITP: Incorporating temporal information and Trajectory prediction Siamese Network for Satellite Video Object Tracking, the code will be released soon.
+SiamTITP: Incorporating temporal information and Trajectory prediction Siamese Network for Satellite Video Object Tracking.
+The overall framework of SiamTITP:
+![image](figs/network frame.png)
+
 ## 1. Environment
 This code has been tested on Ubuntu 22.04, Python 3.8, Pytorch 1.10.0, CUDA 11.1. Please install related libraries before running this code:
 > install necessary packages
