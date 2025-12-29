@@ -67,6 +67,7 @@ python eval.py 	                    \
 The code is implemented based on pysot and [SiamCAR](https://github.com/ohhhyeahhh/SiamCAR?tab=readme-ov-file#5-acknowledgement). We would like to express our sincere thanks to the contributors.
 
 ## 6. Cite
+```python 
 @ARTICLE{11051136,
   author={Zhou, Jiawei and Dong, Yanni and Du, Bo},
   journal={IEEE Transactions on Image Processing}, 
@@ -77,7 +78,7 @@ The code is implemented based on pysot and [SiamCAR](https://github.com/ohhhyeah
   pages={4120-4133},
   keywords={Feature extraction;Trajectory;Satellites;Transformers;Object tracking;Measurement;Target tracking;Kalman filters;Data mining;Training;Siamese network;object tracking;temporal information;trajectory prediction;satellite video},
   doi={10.1109/TIP.2025.3573527}}
-
+```
 
 
 
